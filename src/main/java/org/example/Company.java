@@ -34,6 +34,10 @@ public class Company {
     }
 
     public String addEmployee(int index, String name) {
+        if (index < 0 || index >= developerNames.length) {
+            System.out.println("invalid index " + index);
+            return "Error";
+        }
         if (developerNames[index] == null) {
             return developerNames[index] = name;
         } else {

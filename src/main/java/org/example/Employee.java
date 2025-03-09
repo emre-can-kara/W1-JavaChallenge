@@ -48,12 +48,20 @@ public class Employee {
     }
 
     public String addHealthPlan(int index, String name) {
-        if (healthPlans[index] == null) {
-            return healthPlans[index] = name;
-        } else {
-            System.out.println("The index is full.");
+        // Check if the index is valid (within bounds)
+        if (index < 0 || index >= healthPlans.length) {
+            System.out.println("Invalid index: " + index);
+            return "ERROR";
         }
-        return "ERROR";
+
+        // Check if the array index is empty (null)
+        if (healthPlans[index] == null) {
+            healthPlans[index] = name;
+            return name;
+        } else {
+            System.out.println("The index is already occupied.");
+            return "ERROR";
+        }
     }
     @Override
     public String toString() {
