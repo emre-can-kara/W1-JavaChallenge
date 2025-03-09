@@ -5,7 +5,7 @@ public class Employee {
     private String fullName;
     private String email;
     private String password;
-    String[] healthPlans;
+    private String[] healthPlans;
 
     public Employee(long id, String fullName, String email, String password, String[] healthPlans) {
         this.id = id;
